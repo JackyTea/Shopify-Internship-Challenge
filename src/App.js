@@ -1,10 +1,15 @@
 import React from "react"
-import ImageGrid from "./components/ImageGrid/ImageGrid";
+import { Route, Switch } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
+import MainPage from "./components/MainPage/MainPage";
 
 const App = () => {
   return (
     <div className="font-inter">
-      <ImageGrid />
+      <Switch>
+        <Route exact path='/' render={() => (<MainPage />)} />
+      </Switch>
+      <Footer/>
     </div>
   );
 }
