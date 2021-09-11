@@ -4,13 +4,25 @@ import ImageNotFound from "../../../assets/images/image_not_found.svg";
 const ImageCard = (props) => {
   const { picture } = props;
 
+  const expandOrCollapseText = (paragraphTitle, spanTitle) => {
+    const spanText = document.getElementById(spanTitle)
+    const description = document.getElementById(paragraphTitle);
+    if(description.classList.contains("line-clamp-6")) {
+      spanText.innerHTML = "Collapse text";
+      description.classList.remove("line-clamp-6");
+    } else {
+      spanText.innerHTML = "Show more...";
+      description.classList.add("line-clamp-6");
+    }
+  }
+
   return (
-    <div className="flex flex-col w-96 h-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
-      <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
+    <div className="flex flex-col w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
+      <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
 
       <div className="px-6 py-4">
         <h1 className="text-xl font-semibold text-gray-800 dark:text-white truncate mb-2">{picture.title}</h1>
-        <p className="text-gray-700 dark:text-gray-400 text-sm line-clamp-10">{!picture.explanation ? "No description available." : picture.explanation}</p>
+        <p id={picture.title + "para_id"} className="text-gray-700 dark:text-gray-400 text-sm line-clamp-6">{!picture.explanation ? "No description available." : picture.explanation}</p><span id={picture.title + "span_id"} onClick={() => expandOrCollapseText((picture.title + "para_id"), (picture.title + "span_id"))} className="text-blue-600 dark:text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 text-sm cursor-pointer">Show more...</span>
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />

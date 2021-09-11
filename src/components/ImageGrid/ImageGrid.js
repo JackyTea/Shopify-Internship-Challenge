@@ -31,7 +31,7 @@ const ImageGrid = () => {
   return (
     <>
       <div className="bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-16 sm:px-24 w-full">
+        <div className="container mx-auto px-8 sm:px-24 w-full">
           <div className="py-8">
             <div className="flex flex-row mb-1 sm:mb-0 justify-center w-full">
               <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
