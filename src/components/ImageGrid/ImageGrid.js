@@ -30,12 +30,14 @@ const ImageGrid = () => {
 
   return (
     <>
-      <ImageFilterForm />
       <div className="bg-white dark:bg-gray-800">
         <div className="container mx-auto px-16 sm:px-24 w-full">
           <div className="py-8">
             <div className="flex flex-row mb-1 sm:mb-0 justify-center w-full">
               <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                {resultsFound &&
+                  <ImageFilterForm count={count} setCount={setCount} setPictures={setPictures} />
+                }
                 {!pictures || pictures?.length === 0 ?
                   <>
                     {!resultsFound &&
@@ -57,13 +59,13 @@ const ImageGrid = () => {
                       </div>
                     }
                     {resultsFound &&
-                      <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+                      <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
                         <ImageCardSkeleton />
                       </div>
                     }
                   </>
                   :
-                  <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+                  <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
                     {pictures?.map((picture, index) => <ImageCard key={index} picture={picture} />)}
                   </div>
                 }

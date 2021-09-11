@@ -2,7 +2,12 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      lineClamp: {
+        10: '10',
+        20: '20'
+      }
+    },
   },
   variants: {
     extend: {
