@@ -10,7 +10,7 @@ const ResultsDisplay = (props) => {
         <>
           {!favourites || favourites.length === 0 ?
             <div className="flex flex-grow w-full text-center text-gray-500 dark:text-gray-300 overflow-x-hidden">
-              <div className="w-screen -mx-0 sm:-mx-48">
+              <div className="w-screen -mx-0 md:-mx-48 sm:-mx-32">
                 You haven't favourited anything yet!
               </div>
             </div>

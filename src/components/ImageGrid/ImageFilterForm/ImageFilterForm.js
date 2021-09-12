@@ -6,18 +6,19 @@ const ImageFilterForm = (props) => {
   const handleImageCountSelect = (event) => {
     if (!showFavourites) {
       setPictures([]);
-      setCount(event.target.value);
     }
+    setCount(event.target.value);
   }
 
   return (
     <div className="my-8 flex flex-row items-center">
       <div className="flex-grow">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="image-count">
-          Number of Images
+          {showFavourites ? "(Disabled While Viewing Favorites)" : "Number of Images"}
         </label>
         <div className="relative">
-          <select value={count} onChange={handleImageCountSelect} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="image-count">
+          <select value={count} onChange={handleImageCountSelect} className={showFavourites ? "cursor-not-allowed disabled block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} disabled={showFavourites === true ? true : false}
+            id="image-count">
             <option value="3">3</option>
             <option value="6">6</option>
             <option value="9">9</option>
