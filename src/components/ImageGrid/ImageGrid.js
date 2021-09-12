@@ -7,7 +7,7 @@ import ImageFilterForm from "./ImageFilterForm/ImageFilterForm";
 const ImageGrid = () => {
   const [count, setCount] = useState(12);
   const [pictures, setPictures] = useState([]);
-  const [favourites, setFavourites] = useState();
+  const [favourites, setFavourites] = useState(JSON.parse(localStorage.getItem("favourites")) || []);
   const [resultsFound, setResultsFound] = useState(true);
 
   useEffect(() => {
@@ -30,15 +30,39 @@ const ImageGrid = () => {
   }, [count])
 
   const isFavourited = (picture) => {
-
+    for (let i = 0; i < favourites.length; i++) {
+      if (favourites[i].title === picture.title) {
+        return true;
+      }
+    }
+    return false;
   }
 
   const addToFavourites = (picture) => {
-
+    if (localStorage.getItem("favourites")) {
+      const favouritesArray = JSON.parse(localStorage.getItem("favourites"));
+      favouritesArray.push(picture);
+      localStorage.setItem("favourites", JSON.stringify(favouritesArray));
+    } else {
+      const newFavouritesArray = [];
+      newFavouritesArray.push(picture);
+      localStorage.setItem("favourites", JSON.stringify(newFavouritesArray));
+    }
+    setFavourites([...favourites, picture]);
   }
 
   const removeFromFavourites = (picture) => {
-
+    if (localStorage.getItem("favourites")) {
+      const favouritesArray = JSON.parse(localStorage.getItem("favourites"));
+      const removedFavourites = favouritesArray.filter(f => f.title !== picture.title);
+      if (removedFavourites.length === 0) {
+        localStorage.clear();
+        setFavourites([]);
+      } else {
+        localStorage.setItem("favourites", JSON.stringify(removedFavourites));
+        setFavourites(removedFavourites);
+      }
+    }
   }
 
   return (
