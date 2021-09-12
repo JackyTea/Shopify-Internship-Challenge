@@ -11,7 +11,7 @@ const ImageFilterForm = (props) => {
   }
 
   return (
-    <div className="my-8 flex flex-row items-center justify-center">
+    <div className="my-8 flex flex-row items-center">
       <div className="flex-grow">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="image-count">
           Number of Images
