@@ -2,12 +2,12 @@ import React from "react";
 import ImageNotFound from "../../../assets/images/image_not_found.svg";
 
 const ImageCard = (props) => {
-  const { picture } = props;
+  const { picture, addToFavourites, removeFromFavourites, isFavourited } = props;
 
   const expandOrCollapseText = (paragraphTitle, spanTitle) => {
     const spanText = document.getElementById(spanTitle)
     const description = document.getElementById(paragraphTitle);
-    if(description.classList.contains("line-clamp-6")) {
+    if (description.classList.contains("line-clamp-6")) {
       spanText.innerHTML = "Collapse text";
       description.classList.remove("line-clamp-6");
     } else {
@@ -39,13 +39,21 @@ const ImageCard = (props) => {
       </div>
 
       <div className="flex flex-col justify-between md:flex-row mt-auto px-6 py-4">
-        <button className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-gray-400 text-sm capitalize transition-colors duration-200 transform border-2 border-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          <span className="mx-1">Add To Favorites</span>
-        </button>
-
+        {!isFavourited(picture) ?
+          <button onClick={() => addToFavourites(picture)} className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-gray-400 text-sm capitalize transition-colors duration-200 transform border-2 border-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <span className="mx-1">Add To Favorites</span>
+          </button>
+          :
+          <button onClick={() => removeFromFavourites(picture)} className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-gray-400 text-sm capitalize transition-colors duration-200 transform border-2 border-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+            </svg>
+            <span className="mx-1">Remove From Favourites</span>
+          </button>
+        }
         <button className="mt-2 sm:mt-0 flex items-center p-3 font-medium tracking-wide text-blue-400 text-sm capitalize transition-colors duration-200 transform border-2 border-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-blue-700">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />

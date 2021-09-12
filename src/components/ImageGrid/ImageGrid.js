@@ -7,8 +7,8 @@ import ImageFilterForm from "./ImageFilterForm/ImageFilterForm";
 const ImageGrid = () => {
   const [count, setCount] = useState(12);
   const [pictures, setPictures] = useState([]);
+  const [favourites, setFavourites] = useState();
   const [resultsFound, setResultsFound] = useState(true);
-  const [favourites, setFavorites] = useState(JSON.parse(localStorage.getItem('favourites')));
 
   useEffect(() => {
     let mounted = true;
@@ -28,6 +28,18 @@ const ImageGrid = () => {
       mounted = false;
     }
   }, [count])
+
+  const isFavourited = (picture) => {
+
+  }
+
+  const addToFavourites = (picture) => {
+
+  }
+
+  const removeFromFavourites = (picture) => {
+
+  }
 
   return (
     <>
@@ -67,7 +79,7 @@ const ImageGrid = () => {
                   </>
                   :
                   <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-                    {pictures?.map((picture, index) => <ImageCard key={index} picture={picture} />)}
+                    {pictures?.map((picture, index) => <ImageCard key={index} picture={picture} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} isFavourited={isFavourited} />)}
                   </div>
                 }
               </div>
