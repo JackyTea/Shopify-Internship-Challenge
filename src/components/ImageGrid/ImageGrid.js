@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../../api/api";
-import ImageCard from "./ImageCard/ImageCard";
 import ImageFilterForm from "./ImageFilterForm/ImageFilterForm";
 import LoadingStatusDisplay from "./LoadingStatusDisplay/LoadingStatusDisplay";
 import ResultsDisplay from "./ResultsDisplay/ResultsDisplay";

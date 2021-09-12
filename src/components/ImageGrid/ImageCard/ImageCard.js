@@ -17,7 +17,7 @@ const ImageCard = (props) => {
   }
 
   return (
-    <div className="flex flex-col w-72 w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
+    <div className="flex flex-col w-72 sm:w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
       <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
 
       <div className="px-6 py-4">
