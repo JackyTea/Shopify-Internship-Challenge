@@ -6,7 +6,10 @@ module.exports = {
       lineClamp: {
         10: '10',
         20: '20'
-      }
+      },
+      backgroundImage: {
+        'hero-image': "url('/src/assets/images/space.svg')",
+       }
     },
   },
   variants: {
