@@ -2,11 +2,11 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="container bg-white bg-hero-image-mobile md:bg-hero-image bg-contain bg-no-repeat dark:bg-gray-800 pt-12">
+    <div className="bg-white md:bg-hero-image bg-contain bg-no-repeat dark:bg-gray-800 pt-12">
       <div className="text-center w-full mx-auto py-24 px-4 sm:px-6 lg:py-44 lg:px-8 z-20">
         <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
           <span className="block">
-            NASA Image Sharing Site
+            Spacestagram 🚀
           </span>
         </h2>
         <p className="text-xl mt-4 max-w-full mx-auto text-gray-600 dark:text-gray-200">

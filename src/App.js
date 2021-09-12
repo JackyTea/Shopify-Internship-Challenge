@@ -1,12 +1,10 @@
 import React from "react"
-import NavBar from "./components/NavBar/NavBar";
 import MainPage from "./components/MainPage/MainPage";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <div className="font-inter">
-      <NavBar/>
+    <div className="font-inter container mx-auto">
       <MainPage/>
       <Footer/>
     </div>
