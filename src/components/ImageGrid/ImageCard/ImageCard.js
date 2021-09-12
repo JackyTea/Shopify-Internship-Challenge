@@ -16,6 +16,24 @@ const ImageCard = (props) => {
     }
   }
 
+  const copyImageLink = (imageId, imageLink) => {
+    const type = "text/plain";
+    const blob = new window.Blob([imageLink], { type });
+    const data = [new window.ClipboardItem({ [type]: blob })];
+    const imageText = document.getElementById(imageId).querySelector("span");
+
+    navigator.clipboard.write(data).then(
+      function () {
+        imageText.innerText = "Copied!";
+        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1500);
+      },
+      function () {
+        imageText.innerText = "Error!";
+        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1500);
+      }
+    );
+  }
+
   return (
     <div className="flex flex-col w-72 sm:w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
       <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
@@ -54,7 +72,7 @@ const ImageCard = (props) => {
             <span className="mx-1">Remove Favourite</span>
           </button>
         }
-        <button className="mt-2 sm:mt-0 flex items-center p-3 font-medium tracking-wide text-blue-400 text-sm capitalize transition-colors duration-200 transform border-2 border-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-blue-700">
+        <button id={picture.title + "copy_link_id"} onClick={() => copyImageLink((picture.title + "copy_link_id"), picture.url)} className="mt-2 sm:mt-0 flex items-center p-3 font-medium tracking-wide text-blue-400 text-sm capitalize transition-colors duration-200 transform border-2 border-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-700 focus:outline-none focus:bg-blue-200 dark:focus:bg-blue-600">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
           </svg>

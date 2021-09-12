@@ -13,7 +13,7 @@ const ImageFilterForm = (props) => {
   return (
     <div className="my-8 flex flex-row items-center">
       <div className="flex-grow">
-        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="image-count">
+        <label className={showFavourites ? "block uppercase tracking-wide text-red-500 text-xs font-bold mb-2" : "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"} htmlFor="image-count">
           {showFavourites ? "(Disabled While Viewing Favorites)" : "Number of Images"}
         </label>
         <div className="relative">
