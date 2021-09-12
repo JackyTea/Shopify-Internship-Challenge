@@ -17,7 +17,7 @@ const ImageCard = (props) => {
   }
 
   return (
-    <div className="flex flex-col w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
+    <div className="flex flex-col w-full h-auto bg-white rounded shadow-lg dark:bg-gray-800">
       <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
 
       <div className="px-6 py-4">
@@ -39,7 +39,7 @@ const ImageCard = (props) => {
       </div>
 
       <div className="flex flex-col justify-between md:flex-row mt-auto px-6 py-4">
-        <button className="flex items-center p-3 font-medium tracking-wide text-gray-400 text-sm capitalize transition-colors duration-200 transform border-2 border-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700">
+        <button className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-gray-400 text-sm capitalize transition-colors duration-200 transform border-2 border-gray-400 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-500 dark:focus:bg-gray-700">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>

@@ -5,9 +5,10 @@ import ImageCardSkeleton from "./ImageCardSkeleton/ImageCardSkeleton";
 import ImageFilterForm from "./ImageFilterForm/ImageFilterForm";
 
 const ImageGrid = () => {
-  const [resultsFound, setResultsFound] = useState(true);
   const [count, setCount] = useState(12);
   const [pictures, setPictures] = useState([]);
+  const [resultsFound, setResultsFound] = useState(true);
+  const [favourites, setFavorites] = useState(JSON.parse(localStorage.getItem('favourites')));
 
   useEffect(() => {
     let mounted = true;
