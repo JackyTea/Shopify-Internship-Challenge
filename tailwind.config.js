@@ -9,6 +9,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-image': "url('/src/assets/images/space.svg')",
+        'hero-image-mobile': "url('/src/assets/images/space_mobile.svg')",
        }
     },
   },
