@@ -7,8 +7,9 @@ import ImageFilterForm from "./ImageFilterForm/ImageFilterForm";
 const ImageGrid = () => {
   const [count, setCount] = useState(12);
   const [pictures, setPictures] = useState([]);
-  const [favourites, setFavourites] = useState(JSON.parse(localStorage.getItem("favourites")) || []);
   const [resultsFound, setResultsFound] = useState(true);
+  const [showFavourites, setShowFavourites] = useState(false);
+  const [favourites, setFavourites] = useState(JSON.parse(localStorage.getItem("favourites")) || []);
 
   useEffect(() => {
     let mounted = true;
@@ -73,7 +74,7 @@ const ImageGrid = () => {
             <div className="flex flex-row mb-1 sm:mb-0 justify-center w-full">
               <div className="-mx-4 sm:-mx-8 px-4 sm:px-4 py-4 overflow-x-auto">
                 {resultsFound &&
-                  <ImageFilterForm count={count} setCount={setCount} setPictures={setPictures} />
+                  <ImageFilterForm count={count} showFavourites={showFavourites} setCount={setCount} setPictures={setPictures} setShowFavourites={setShowFavourites} />
                 }
                 {!pictures || pictures?.length === 0 ?
                   <>
@@ -103,7 +104,15 @@ const ImageGrid = () => {
                   </>
                   :
                   <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-                    {pictures?.map((picture, index) => <ImageCard key={index} picture={picture} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} isFavourited={isFavourited} />)}
+                    {showFavourites ?
+                      <>
+                        {favourites?.map((picture, index) => <ImageCard key={index} picture={picture} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} isFavourited={isFavourited} />)}
+                      </>
+                      :
+                      <>
+                        {pictures?.map((picture, index) => <ImageCard key={index} picture={picture} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} isFavourited={isFavourited} />)}
+                      </>
+                    }
                   </div>
                 }
               </div>
