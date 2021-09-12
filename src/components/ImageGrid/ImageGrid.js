@@ -68,10 +68,10 @@ const ImageGrid = () => {
   return (
     <>
       <div className="bg-white dark:bg-gray-800">
-        <div className="mx-auto px-8 sm:px-24 w-full">
+        <div className="mx-auto px-8 sm:px-16 w-full">
           <div className="py-8">
             <div className="flex flex-row mb-1 sm:mb-0 justify-center w-full">
-              <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+              <div className="-mx-4 sm:-mx-8 px-4 sm:px-4 py-4 overflow-x-auto">
                 {resultsFound &&
                   <ImageFilterForm count={count} setCount={setCount} setPictures={setPictures} />
                 }

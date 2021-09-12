@@ -9,8 +9,8 @@ const ImageFilterForm = (props) => {
   }
 
   return (
-    <div className="my-8 flex flex-col md:flex-row items-center">
-      <div className="w-full">
+    <div className="my-8 flex flex-row items-center justify-center">
+      <div className="flex-grow">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="image-count">
           Number of Images
         </label>
@@ -28,6 +28,18 @@ const ImageFilterForm = (props) => {
             <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
           </div>
         </div>
+      </div>
+      <div className="ml-2">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="view-favourites">
+          View Favourites
+        </label>
+        <button id="view-favourites" className="flex w-full items-center px-2 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md dark:bg-gray-800 hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          <span className="mx-1">View</span>
+        </button>
       </div>
     </div>
   );

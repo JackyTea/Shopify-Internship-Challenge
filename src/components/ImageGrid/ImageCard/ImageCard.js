@@ -17,7 +17,7 @@ const ImageCard = (props) => {
   }
 
   return (
-    <div className="flex flex-col w-full h-auto bg-white rounded shadow-lg dark:bg-gray-800">
+    <div className="flex flex-col w-72 w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
       <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
 
       <div className="px-6 py-4">
@@ -48,8 +48,8 @@ const ImageCard = (props) => {
           </button>
           :
           <button onClick={() => removeFromFavourites(picture)} className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-red-400 text-sm capitalize transition-colors duration-200 transform border-2 border-red-400 rounded-md hover:bg-red-100 dark:hover:bg-red-700 focus:outline-none focus:bg-red-100 dark:focus:bg-red-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
             <span className="mx-1">Remove From Favourites</span>
           </button>
