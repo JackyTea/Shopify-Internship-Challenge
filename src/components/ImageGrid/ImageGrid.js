@@ -74,7 +74,7 @@ const ImageGrid = () => {
             <div className="flex flex-row mb-1 sm:mb-0 justify-center">
               <div className="-mx-4 sm:-mx-8 px-4 sm:px-4 py-4 overflow-x-auto">
                 {resultsFound &&
-                  <ImageFilterForm count={count} showFavourites={showFavourites} setCount={setCount} setPictures={setPictures} setShowFavourites={setShowFavourites} />
+                  <ImageFilterForm count={count} favourites={favourites} showFavourites={showFavourites} setCount={setCount} setPictures={setPictures} setShowFavourites={setShowFavourites} />
                 }
                 {!pictures || pictures?.length === 0 ?
                   <LoadingStatusDisplay resultsFound={resultsFound} />

@@ -1,7 +1,7 @@
 import React from "react";
 
 const ImageFilterForm = (props) => {
-  const { count, showFavourites, setCount, setPictures, setShowFavourites } = props;
+  const { count, favourites, showFavourites, setCount, setPictures, setShowFavourites } = props;
 
   const handleImageCountSelect = (event) => {
     if (!showFavourites) {
@@ -36,7 +36,7 @@ const ImageFilterForm = (props) => {
         {!showFavourites ?
           <>
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="view-favourites">
-              View Favourites
+              View Favourites ({favourites?.length})
             </label>
             <button onClick={() => setShowFavourites(oldShowFavourites => !oldShowFavourites)} id="view-favourites" className="flex w-full items-center px-2 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-pink-500 rounded-md dark:bg-gray-800 hover:bg-pink-600 dark:hover:bg-gray-700 focus:outline-none">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
