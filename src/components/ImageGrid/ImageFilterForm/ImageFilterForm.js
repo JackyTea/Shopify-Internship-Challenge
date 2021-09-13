@@ -17,7 +17,7 @@ const ImageFilterForm = (props) => {
           {showFavourites ? "(Disabled While Viewing Favourites)" : "Number of Images"}
         </label>
         <div className="relative">
-          <select value={count} onChange={handleImageCountSelect} className={showFavourites ? "cursor-not-allowed disabled block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} disabled={showFavourites === true ? true : false}
+          <select value={count} onChange={handleImageCountSelect} className={showFavourites ? "cursor-not-allowed disabled block appearance-none w-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "block appearance-none w-full bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-white py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} disabled={showFavourites === true ? true : false}
             id="image-count">
             <option value="3">3</option>
             <option value="6">6</option>
