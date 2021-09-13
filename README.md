@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Spacestagram](https://jteashopifychallenge.netlify.app) is a React web application designed to pull images from [NASA's APOD API](https://github.com/nasa/apod-api). It allows users to browse through a variety of interesting space photography and favourite the images to view later. 
+[Spacestagram](https://jteashopifychallenge.netlify.app) is a React web application designed to pull images from [NASA's APOD API](https://github.com/nasa/apod-api). It allows users to browse through a variety of interesting space photography and favourite the images to view later. This site was built for the [Shopify Front-End Intern Challenge](https://docs.google.com/document/d/1QlC6htA5SXEl3YruAOkJWj2-0W3w-n0UOzGuJ1EcktQ/edit#).
 
 You can visit the site [here](https://jteashopifychallenge.netlify.app/).
 
