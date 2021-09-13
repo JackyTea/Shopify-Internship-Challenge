@@ -25,11 +25,11 @@ const ImageCard = (props) => {
     navigator.clipboard.write(data).then(
       function () {
         imageText.innerText = "Copied!";
-        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1000);
+        setTimeout(function () { imageText.innerText = "Copy Link"; }, 1000);
       },
       function () {
         imageText.innerText = "Error!";
-        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1000);
+        setTimeout(function () { imageText.innerText = "Copy Link"; }, 1000);
       }
     );
   }
