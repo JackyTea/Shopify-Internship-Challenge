@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="container px-4 sm:px-32 py-4 mx-auto flex justify-end items-center">
         <div className="flex justify-center mt-6 lg:flex lg:mt-0 lg:-mx-2">
           <ToggleTheme styleSet={"h-5 w-5 mx-4 text-gray-800 hover:text-black dark:text-white dark:hover:text-gray-200"} />
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400" aria-label="Github">
+          <a href="https://github.com/JackyTea/Shopify-Internship-Challenge" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400" aria-label="Github">
             <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
