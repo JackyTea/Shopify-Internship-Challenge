@@ -10,7 +10,7 @@ const HeroSection = () => {
           </span>
         </h2>
         <p className="text-xl mt-4 max-w-full mx-auto text-gray-600 dark:text-gray-200">
-          Share and favourite images from <a href="https://github.com/nasa/apod-api" target="_blank" rel="noopener noreferrer"><code className="text-blue-600 dark:text-gray-200 hover:text-blue-900 hover:text-blue-100">NASA's APOD API</code></a>.
+          Share and favourite images from <a href="https://github.com/nasa/apod-api" target="_blank" rel="noopener noreferrer"><code className="text-blue-600 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-500">NASA's APOD API</code></a>.
         </p>
       </div>
     </div>

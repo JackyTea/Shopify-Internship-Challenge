@@ -25,17 +25,17 @@ const ImageCard = (props) => {
     navigator.clipboard.write(data).then(
       function () {
         imageText.innerText = "Copied!";
-        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1500);
+        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1000);
       },
       function () {
         imageText.innerText = "Error!";
-        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1500);
+        setTimeout(function () { imageText.innerText = "Copy Link!"; }, 1000);
       }
     );
   }
 
   return (
-    <div className="flex flex-col w-72 sm:w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-800">
+    <div className="flex flex-col w-72 sm:w-96 h-auto bg-white rounded shadow-lg dark:bg-gray-900">
       <img className="object-cover object-center w-full h-56 bg-gray-100 dark:bg-gray-700 rounded-t-lg" src={!picture.url || picture?.url?.match(/([a-z\-_0-9/:.]*\.(jpg|jpeg|png|svg|gif))/i) == null ? ImageNotFound : picture.url} alt={picture.title} />
 
       <div className="px-6 py-4">
@@ -62,14 +62,14 @@ const ImageCard = (props) => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
-            <span className="mx-1">Add To Favorites</span>
+            <span className="mx-1">Add To Favourites</span>
           </button>
           :
           <button onClick={() => removeFromFavourites(picture)} className="flex items-center p-3 flex-grow mr-0 sm:mr-2 font-medium tracking-wide text-red-400 text-sm capitalize transition-colors duration-200 transform border-2 border-red-400 rounded-md hover:bg-red-100 dark:hover:bg-red-700 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
-            <span className="mx-1">Remove Favourite</span>
+            <span className="mx-1">Favourited</span>
           </button>
         }
         <button id={picture.title + "copy_link_id"} onClick={() => copyImageLink((picture.title + "copy_link_id"), picture.url)} className="mt-2 sm:mt-0 flex items-center p-3 font-medium tracking-wide text-blue-400 text-sm capitalize transition-colors duration-200 transform border-2 border-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-700 focus:outline-none">
