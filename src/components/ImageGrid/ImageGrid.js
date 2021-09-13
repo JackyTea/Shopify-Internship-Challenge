@@ -57,7 +57,7 @@ const ImageGrid = () => {
       const favouritesArray = JSON.parse(localStorage.getItem("favourites"));
       const removedFavourites = favouritesArray.filter(f => f.title !== picture.title);
       if (removedFavourites.length === 0) {
-        localStorage.clear();
+        localStorage.removeItem("favourites");
         setFavourites([]);
       } else {
         localStorage.setItem("favourites", JSON.stringify(removedFavourites));
