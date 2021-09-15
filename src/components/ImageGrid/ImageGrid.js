@@ -76,7 +76,7 @@ const ImageGrid = () => {
                 {resultsFound &&
                   <ImageFilterForm count={count} favourites={favourites} showFavourites={showFavourites} setCount={setCount} setPictures={setPictures} setShowFavourites={setShowFavourites} />
                 }
-                {!pictures || pictures?.length === 0 ?
+                {(!pictures || pictures?.length === 0) && !showFavourites ?
                   <LoadingStatusDisplay resultsFound={resultsFound} />
                   :
                   <ResultsDisplay pictures={pictures} favourites={favourites} showFavourites={showFavourites} addToFavourites={addToFavourites} removeFromFavourites={removeFromFavourites} isFavourited={isFavourited} />
